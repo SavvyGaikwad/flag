@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Country Quiz</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='./style.css'>
+</head>
+
+<body>
+    <section id="usernameSection">
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" placeholder="Username" />
+        <button onclick="startGame()">Start Game</button>
+    </section>
+
+    <section class="card" id="card" style="display: none;"> <!-- Initially hidden -->
+        <section class="infobar">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="time" id="time"></div>
+        </section>
+        <div class="container">
+            <section class="section">
+                <img src="" alt="flag" class="flag" id="flag">
+            </section>
+            <div class="border"></div>
+            <section class="section" id="optionhalf">
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option1input" class="optionradio">
+                        <label for="option1input" class="label" id="option1label"></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option2input" class="optionradio">
+                        <label for="option2input" class="label" id="option2label"></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option3input" class="optionradio">
+                        <label for="option3input" class="label" id="option3label"></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option4input" class="optionradio">
+                        <label for="option4input" class="label" id="option4label"></label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="alert" class="card">
+        <div class="alerttext">Score: <span id="alertscore"></span></div>
+        <div class="alerttext">Accuracy: <span id="alertaccuracy"></span></div>
+        <button onclick="refresh()" class="button">Restart</button>
+    </section>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1061.0.min.js"></script>
+    <script src='src/awsConfig.js'></script> <!-- Your AWS configuration script -->
+    <script src='countries.js'></script>
+    <script src='main.js'></script>
+</body>
+
+</html>
